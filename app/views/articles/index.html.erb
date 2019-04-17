@@ -8,8 +8,8 @@
     <div class="col-sm-6">
       <div class="card bg-dark my-2">
         <div class="card-body">
-          <h3 class="card-title"><%= link_to article.title, article_path(article), class: "text-light" %></h3>
-          <p class="card-text text-muted"><%= article.text %></p>
+          <h3 class="card-title"><%= link_to article.title, article_path(article), class: "text-light mx-2" %></h3>
+          <p class="card-text text-muted mx-2"><%= article.text %></p>
           <div class="row">
             <%= link_to 'Edit', edit_article_path(article), class: "col btn btn-light mx-4" %>
             <%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "col btn btn-danger mx-4" %>
