@@ -1,21 +1,27 @@
-<h1>Listing articles</h1>
+<h1>Articles</h1>
 <%= link_to 'My Blog', controller: 'articles' %>
 <%= link_to 'New Article', new_article_path %>
- 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-  </tr>
 
+<% count = 0 %>
+<div class="row">
   <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %> </td>
-      <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+    <div class="col-sm-6">
+      <div class="card bg-dark my-2">
+        <div class="card-body">
+          <h3 class="card-title"><%= link_to article.title, article_path(article), class: "text-light" %></h3>
+          <p class="card-text text-muted"><%= article.text %></p>
+          <div class="row">
+            <%= link_to 'Edit', edit_article_path(article), class: "col btn btn-light mx-4" %>
+            <%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "col btn btn-danger mx-4" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% if count % 2 == 1 %>
+      </div>
+      <div class="row">
+    <% end %>
+    <!-- continue on -->
+    <% count += 1 %>
   <% end %>
-</table>
+</div>

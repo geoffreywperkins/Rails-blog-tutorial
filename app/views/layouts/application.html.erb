@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>Geoff's Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,9 +11,14 @@
 
   <div class="container">
     <header>
-      <p>
-        Spud's blog
-      </p>
+      <div class="jumbotron bg-dark rounded text-white mt-2">
+        <div class="col text-center">
+          <h1><%= link_to "Geoff's blog", articles_path %></h1>
+          <!--<p>
+            Spud's blog
+          </p>-->
+        </div>
+      </div>
     </header>
 
     <body>
@@ -21,12 +26,12 @@
     </body>
 
     <footer>
-      <p>
-        Blog example from this <a href="https://guides.rubyonrails.org/getting_started.html">"Getting Started with Rails" tutorial</a>
-      </p>
-      <p>
-        Using Bootstrap for improved looks :)
-      </p>
+      <div class="row">
+        <div class="col text-center">
+        <p>
+          Blog example from this <a href="https://guides.rubyonrails.org/getting_started.html">"Getting Started with Rails" tutorial</a><br>Using Bootstrap for improved looks :)
+        </p>
+      </div>
     </footer>
   </div>
 </html>
