@@ -13,18 +13,30 @@
 		</div>
 	<% end %>
 
-	<p>
-		<%= form.label :title %><br>
-		<%= form.text_field :title %>
-	</p>
+	<div class="row justify-content-center">
+		<div class="col-sm-8">
+			<div class="card bg-dark">
+				<div class="card-body">
+					<div class="form-group">
+						<p>
+							<%= form.label :title, class: "text-light" %><br>
+							<%= form.text_field :title, class: "form-control" %>
+						</p>
+					</div>
 
-	<p>
-		<%= form.label :title %><br>
-		<%= form.text_area :text %>
-	</p>
+					<div class="form-group">
+						<p>
+							<%= form.label :text, class: "text-light" %><br>
+							<%= form.text_area :text, class: "form-control" %>
+						</p>
+					</div>
 
-	<p>
-		<%= form.submit %>
-	</p>
+					<p>
+						<%= form.submit %>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <% end %>
