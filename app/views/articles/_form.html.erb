@@ -14,9 +14,9 @@
 	<% end %>
 
 	<div class="row justify-content-center">
-		<div class="col-sm-8">
+		<div class="col-sm">
 			<div class="card bg-dark">
-				<div class="card-body">
+				<div class="card-body p-8">
 					<div class="form-group">
 						<p>
 							<%= form.label :title, class: "text-light" %><br>
@@ -31,9 +31,15 @@
 						</p>
 					</div>
 
-					<p>
-						<%= form.submit %>
-					</p>
+
+					<div class="container">
+						<div class="row justify-content-center">
+							<%= link_to 'Back', articles_path, class: "btn btn-light col-sm-3" %>
+							<div class="col-sm-3">
+							</div>
+							<%= form.submit "Create Article", class: "btn btn-light col-sm-3" %>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
