@@ -16,6 +16,41 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
+    <!-- HEADERS -->
+    <% if controller_name =="articles" and action_name == "index"%>
+      <!-- Header with image for main page -->
+      <header class="header-image">
+        <div class='header-top'>
+          <%= link_to image_tag("g_icon.png"), articles_path %>
+          <p class="navbar-text">
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <% else %>
+              <%= link_to "Sign in", new_user_session_path, :class => 'btn'  %>
+              <%= link_to "Get started", new_user_registration_path, :class => 'btn btn-outline-dark'  %>
+            <% end %>
+          </p>
+        </div>
+      </header>
+    <% else %>
+      <!-- Plain header for all other pages -->
+      <header class='header-top'>
+        <%= link_to image_tag("g_icon.png"), articles_path %>
+        <p class="navbar-text">
+          <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+          <% else %>
+            <%= link_to "Sign in", new_user_session_path, :class => 'btn'  %>
+            <%= link_to "Get started", new_user_registration_path, :class => 'btn btn-outline-dark'  %>
+          <% end %>
+        </p>  
+      </header>
+    <% end %>
     <%= yield %>
   </body>
 
