@@ -2,8 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.article-thumbnail {
+	background-color: #D8D8D8;
+	height: 140px;
+	width: 100%;
+}
+
 .article-card-text {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.article-card-title {
+	color: rgba(0,0,0,.85);
+}
+
+a:hover {
+	color: rgba(0,0,0,.85);
+	text-decoration: none;
+}
+a {
+	color: rgba(0,0,0,.85);
 }

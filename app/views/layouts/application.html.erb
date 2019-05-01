@@ -9,29 +9,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <div class="container">
-    <header>
-      <div class="jumbotron bg-dark rounded mt-2">
-        <div class="col text-center">
-          <h1><strong><%= link_to "Geoff's blog", articles_path, class: "text-light" %></strong></h1>
-          <!--<p>
-            Spud's blog
-          </p>-->
-        </div>
-      </div>
-    </header>
+  <body>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <%= yield %>
+  </body>
 
-    <body>
-      <%= yield %>
-    </body>
-
-    <footer>
-      <div class="row">
-        <div class="col text-center">
-        <p>
-          Blog example from this <a href="https://guides.rubyonrails.org/getting_started.html">"Getting Started with Rails" tutorial</a><br>Using Bootstrap for improved looks :)
-        </p>
-      </div>
-    </footer>
-  </div>
+  <footer class="container">
+    <div class="row">
+      <div class="col text-center">
+      <p>
+        Blog example from this <a href="https://guides.rubyonrails.org/getting_started.html">"Getting Started with Rails" tutorial</a><br>Using Bootstrap for improved looks :)
+      </p>
+    </div>
+  </footer>
 </html>
